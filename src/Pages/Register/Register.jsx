@@ -1,12 +1,11 @@
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
 import { AuthContext } from "../../Provider/AuthProvider";
 
 
 const Register = () => {
-   const {registerUser} = useContext(AuthContext)
+    const { registerUser } = useContext(AuthContext)
 
     const [registerError, setRegisterError] = useState("");
     console.log(registerError);
@@ -55,7 +54,7 @@ const Register = () => {
                     const toastMessage = () => toast.success("Your account Create Successfully");
                     toastMessage();
                 }
-                })
+            })
             .catch(error => {
                 error.message
                 if (error.message) {
@@ -78,13 +77,13 @@ const Register = () => {
                     <label className="text-lg font-medium py-2">Password</label>
                     <input className="bg-[#10a58f] rounded text-xl py-2 pl-4 text-[#2a2824] focus:outline-none  focus:ring-0" type="password" name="password" required />
                     <input className="bg-gradient-to-r from-[#e39396] via-purple-500 to-pink-500 rounded py-2 my-5 text-white font-medium text-xl hover:cursor-pointer" type="submit" value="Register" />
-                    <ToastContainer/>
+                    <ToastContainer />
                 </form>
-                <div className="flex flex-col w-[90%]">
-                <div className="divider">OR</div>
-                <Link><button className="bg-[#10a58f] rounded py-2 my-2 text-white font-medium text-xl w-full">Continue with Google</button></Link>
-                <Link><button className="bg-[#10a58f] rounded py-2 text-white font-medium text-xl w-full">Continue with GitHub</button></Link>
-                </div>
+                {/* <div className="flex flex-col w-[90%]">
+                    <div className="divider">OR</div>
+                    <Link><button className="bg-[#10a58f] rounded py-2 my-2 text-white font-medium text-xl w-full">Continue with Google</button></Link>
+                    <Link><button className="bg-[#10a58f] rounded py-2 text-white font-medium text-xl w-full">Continue with GitHub</button></Link>
+                </div> */}
             </div>
             <div className="w-1/2">
                 <img className="rounded w-full " src="/src/assets/images/login and register.png" alt="" />

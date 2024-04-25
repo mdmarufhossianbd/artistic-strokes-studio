@@ -18,9 +18,9 @@ const Naver = () => {
             <div className="flex gap-4">
                 {links}
             </div>
-            <div>
-                <Link to={'/login'}><button>Login</button></Link>
-                <Link to={'/register'}>                <button>Register</button>
+            <div className="flex gap-4">
+                <Link to={'/login'}><button className="bg-gradient-to-r from-[#e39396] via-purple-500 to-pink-500 rounded py-2 px-5 text-white font-medium text-xl hover:cursor-pointer">Login</button></Link>
+                <Link to={'/register'}>                <button className="bg-gradient-to-r from-[#e39396] via-purple-500 to-pink-500 rounded py-2 px-5 text-white font-medium text-xl hover:cursor-pointer">Register</button>
                 </Link>
             </div>
         </div>
