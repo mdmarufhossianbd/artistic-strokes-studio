@@ -13,7 +13,7 @@ const Naver = () => {
     </>
 
     return (
-        <div className="flex justify-between py-5 bg-">
+        <div className="max-w-7xl mx-auto flex justify-between py-5 bg-">
             <h2>Artistic Strokes Studio</h2>
             <div className="flex gap-4">
                 {links}
