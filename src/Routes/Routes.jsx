@@ -4,6 +4,7 @@ import {
 import Root from "../Layouts/Root";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
+import PaintingAndDrawing from "../Pages/PaintingAndDrawing/PaintingAndDrawing";
 import Register from "../Pages/Register/Register";
   
   const router = createBrowserRouter([
@@ -22,6 +23,10 @@ import Register from "../Pages/Register/Register";
         {
           path: '/register',
           element: <Register></Register>
+        },
+        {
+          path: 'painting-and-drawing',
+          element: <PaintingAndDrawing></PaintingAndDrawing>
         }
       ]
     },
