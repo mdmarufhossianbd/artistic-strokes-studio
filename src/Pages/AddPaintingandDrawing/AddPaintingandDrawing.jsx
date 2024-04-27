@@ -1,6 +1,12 @@
+import { useContext } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { AuthContext } from '../../Provider/AuthProvider';
 
 
 const AddPaintingandDrawing = () => {
+    const {user} = useContext(AuthContext)
+
     const handleSubmit = e => {
         e.preventDefault();
         const form = e.target;
@@ -14,8 +20,9 @@ const AddPaintingandDrawing = () => {
         const customization = form.customization.value;
         const user_name = form.user_name.value;
         const user_email = form.user_email.value;
+        const email = user.email;
         
-        const categoryData = { photo, item_name, category, price, short_description, rating, processing_time, customization, user_name, user_email}
+        const categoryData = { photo, item_name, category, price, short_description, rating, processing_time, customization, user_name, user_email, email}
         console.log(categoryData);
 
         fetch('http://localhost:5000/paintings-and-drawings', {
@@ -26,11 +33,12 @@ const AddPaintingandDrawing = () => {
             body: JSON.stringify(categoryData)
         })
             .then(res => res.json())
-            .then(data => {
-                alert("Item Added Successfully")
-                console.log(data);
+            .then(data => {                
+                // console.log(data);
                 if (data.acknowledged == true) {
-                    alert("Item Added Successfully")
+                    const notify = () => toast("Item added Successfully");
+                    notify();
+                    form.reset();
                 }
             })
 
@@ -49,7 +57,7 @@ const AddPaintingandDrawing = () => {
                 </div>
                 <div>
                     <label className="text-lg font-medium">Select Category</label>
-                    <select name="sub_category" className=" select select-bordered w-[100%] ">
+                    <select name="sub_category" className=" select select-bordered w-[100%] mt-2 border-[#10a58f] focus:outline-none focus:ring-0">
                         <option disabled selected>Choose One</option>
                         <option name="Landscape Painting">Landscape Painting</option>
                         <option name="Portrait Drawing">Portrait Drawing</option>
@@ -78,7 +86,7 @@ const AddPaintingandDrawing = () => {
                 </div>
                 <div>
                     <label className="text-lg font-medium">Customization</label>
-                    <select name="customization" className="select select-bordered w-full max-w-xs">
+                    <select name="customization" className="select select-bordered w-full mt-2 border-[#10a58f] focus:outline-none focus:ring-0">
                         <option disabled selected>Choose One</option>
                         <option name="Yes">Yes</option>
                         <option name="No">No</option>
@@ -86,7 +94,7 @@ const AddPaintingandDrawing = () => {
                 </div>                
                 <div>
                     <label className="text-lg font-medium">Stock</label>
-                    <select name="stock" className="select select-bordered w-full">
+                    <select name="stock" className="select select-bordered w-full mt-2 border-[#10a58f] focus:outline-none focus:ring-0">
                         <option disabled selected>Choose One</option>
                         <option name="Yes">In Stock</option>
                         <option name="No">Made to Order</option>
@@ -94,14 +102,15 @@ const AddPaintingandDrawing = () => {
                 </div>
                 <div>
                     <label className="text-lg font-medium">User Name</label>
-                    <input className="bg-[#10a58f] mt-2 rounded w-full py-3 px-3 text-white placeholder:text-white placeholder:pl-3 focus:outline-none focus:ring-0" type="text" name="user_name" placeholder="Enter User Name" id="" />
+                    <input className="bg-[#10a58f] mt-2 rounded w-full py-3 px-3 text-white placeholder:text-white placeholder:pl-3 focus:outline-none focus:ring-0" type="text" name="user_name" placeholder="Enter User Name" defaultValue={user.displayName} disabled />
                 </div>
                 <div>
                     <label className="text-lg font-medium">User E-mail</label>
-                    <input className="bg-[#10a58f] mt-2 rounded w-full py-3 px-3 text-white placeholder:text-white placeholder:pl-3 focus:outline-none focus:ring-0" type="text" name="user_email" placeholder="Enter User E-mail" id="" />
+                    <input className="bg-[#10a58f] mt-2 rounded w-full py-3 px-3 text-white placeholder:text-white placeholder:pl-3 focus:outline-none focus:ring-0" type="text" name="user_email" placeholder="Enter User E-mail" defaultValue={user.email} disabled />
                 </div>
                 <input className="col-span-2 bg-gradient-to-r from-[#e39396] via-purple-500 to-pink-500 text-white py-2 w-1/2 mx-auto rounded font-semibold text-xl" type="submit" value="Add Item" />
             </form>
+            <ToastContainer/>
         </div>
     );
 };

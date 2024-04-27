@@ -40,7 +40,10 @@ const Navber = () => {
                         <li><Link className="hover:bg-[#5245ED] hover:text-white rounded py-2 px-3" to={'/'}>Home</Link></li>
                         <li><Link className="hover:bg-[#5245ED] hover:text-white rounded py-2 px-3" to={'/painting-and-drawing'}>Painting & Drawig</Link></li>
                         {
-                            user ? <li><Link className="hover:bg-[#5245ED] hover:text-white rounded py-2 px-3" to={'/updateuserprofile'}>Update Profile</Link></li> : ""
+                            user ? <li><Link className="hover:bg-[#5245ED] hover:text-white rounded py-2 px-3" to={'/add-painting-and-drawing'}>Add Painting and Drawing</Link> 
+                            <Link to={'/my-paintings-and-drawings'}>My Added</Link>
+                            
+                            </li> : ""
                         }
                     </div>
                 </div>
