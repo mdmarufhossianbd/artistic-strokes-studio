@@ -18,11 +18,12 @@ const AddPaintingandDrawing = () => {
         const rating = form.rating.value;
         const processing_time = form.processing_time.value;
         const customization = form.customization.value;
+        const stock = form.stock.value;
         const user_name = form.user_name.value;
         const user_email = form.user_email.value;
         const email = user.email;
         
-        const categoryData = { photo, item_name, category, price, short_description, rating, processing_time, customization, user_name, user_email, email}
+        const categoryData = { photo, item_name, category, price, short_description, rating, processing_time, customization, stock, user_name, user_email, email}
         console.log(categoryData);
 
         fetch('http://localhost:5000/paintings-and-drawings', {
