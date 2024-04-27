@@ -2,7 +2,7 @@ import { GithubAuthProvider, GoogleAuthProvider, signInWithPopup } from "firebas
 import { } from "firebase/auth/cordova";
 import { useContext, useState } from "react";
 import { IoEye, IoEyeOff } from "react-icons/io5";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import auth from "../../Firebase/Firebase.config";
 import { AuthContext } from "../../Provider/AuthProvider";
@@ -13,7 +13,7 @@ const Login = () => {
     const googleProvider = new GoogleAuthProvider;
     const githubProvider = new GithubAuthProvider;
     const navigate = useNavigate();
-
+    const location = useLocation();
     const [showPassword, setShowPassword] = useState(false);
 
     // Login with Email & Password
@@ -58,7 +58,7 @@ const Login = () => {
         })
     }
 
-    // Logini with Github
+    // Login with Github
     const handleGitHubLogin = () => {
         signInWithPopup(auth, githubProvider)
         .then(result=> {
@@ -92,7 +92,6 @@ const Login = () => {
                             {showPassword ? <IoEyeOff /> : <IoEye />
                             }  </span>
                     </div>
-                    
                     <input className="bg-gradient-to-r from-[#e39396] via-purple-500 to-pink-500 rounded py-2 my-5 text-white font-medium text-xl hover:cursor-pointer" type="submit" value="Login" />
                     <ToastContainer/>
                 </form>
