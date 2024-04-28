@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import Root from "../Layouts/Root";
 import AddPaintingandDrawing from "../Pages/AddPaintingandDrawing/AddPaintingandDrawing";
+import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import MyPaintsAndDrawing from "../Pages/MyPaintsAndDrawing/MyPaintsAndDrawing";
@@ -16,6 +17,7 @@ import PrivateRoutes from "./PrivateRoutes";
     {
       path: "/",
       element: <Root></Root>,
+      errorElement: <ErrorPage></ErrorPage>,
       children: [
         {
             path: '/',
@@ -42,8 +44,7 @@ import PrivateRoutes from "./PrivateRoutes";
         {
           path: 'add-painting-and-drawing',
           element: <PrivateRoutes>
-            <AddPaintingandDrawing></AddPaintingandDrawing>
-          </PrivateRoutes>
+            <AddPaintingandDrawing></AddPaintingandDrawing></PrivateRoutes>
         },
         {
           path: '/my-paintings-and-drawings/',
