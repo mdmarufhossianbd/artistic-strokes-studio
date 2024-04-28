@@ -32,7 +32,7 @@ const MyPaintsAndDrawingsCard = ({ item, userCrafts ,setUserCrafts }) => {
             <p><span className='font-medium'>Stock</span> : {stock || `Please Update`}</p>
             <h2><span className='font-medium'>Price</span> : {price}</h2>
             <Link to={`/paintings-and-drawings/${_id}`}><button className='bg-pink-500 w-full rounded py-2 my-2 text-white font-medium'>View</button></Link>
-            <Link><button className='bg-pink-500 w-full rounded py-2 my-2 text-white font-medium'>Update</button></Link>
+            <Link to={`/update-craft/${_id}`}><button className='bg-pink-500 w-full rounded py-2 my-2 text-white font-medium'>Update</button></Link>
             <Link><button onClick={() => handleDelte(_id)} className='bg-pink-500 w-full rounded py-2 my-2'>Delete</button></Link>
 
         </div>

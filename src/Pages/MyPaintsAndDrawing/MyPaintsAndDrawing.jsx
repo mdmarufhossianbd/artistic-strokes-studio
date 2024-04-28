@@ -6,9 +6,7 @@ import { AuthContext } from "../../Provider/AuthProvider";
 
 const MyPaintsAndDrawing = () => {
     const { user } = useContext(AuthContext);
-
     const loadCrafts = useLoaderData();
-
     const [userCrafts, setUserCrafts] = useState(loadCrafts)
 
 

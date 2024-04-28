@@ -9,6 +9,7 @@ import MyPaintsAndDrawing from "../Pages/MyPaintsAndDrawing/MyPaintsAndDrawing";
 import PaintingAndDrawing from "../Pages/PaintingAndDrawing/PaintingAndDrawing";
 import PaintingAndDrawingDetails from "../Pages/PaintingAndDrawingDetails/PaintingAndDrawingDetails";
 import Register from "../Pages/Register/Register";
+import UpdateCraft from "../Pages/UpdateCraft/UpdateCraft";
 import PrivateRoutes from "./PrivateRoutes";
   
   const router = createBrowserRouter([
@@ -48,6 +49,11 @@ import PrivateRoutes from "./PrivateRoutes";
           path: '/my-paintings-and-drawings/',
           element: <PrivateRoutes><MyPaintsAndDrawing></MyPaintsAndDrawing></PrivateRoutes>,
           loader: ({params}) => fetch(`http://localhost:5000/user-added/${params.email}`)
+        },
+        {
+          path: '/update-craft/:id',
+          element: <PrivateRoutes><UpdateCraft></UpdateCraft></PrivateRoutes>,
+          loader: ({params}) => fetch(`http://localhost:5000/paintings-and-drawings/${params.id}`)
         }
       ]
     },
