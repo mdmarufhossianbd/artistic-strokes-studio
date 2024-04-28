@@ -1,5 +1,7 @@
 import CarftItem from "../../Components/CarftItem/CarftItem";
 import Category from "../../Components/Category/Category";
+import MoreExplore from "../../Components/MoreExplore/MoreExplore";
+import OurArtist from "../../Components/OurArtist/OurArtist";
 import Slider from "../../Components/Slider/Slider";
 
 const Home = () => {
@@ -14,6 +16,12 @@ const Home = () => {
             <div className="my-10 px-4">
                 <h2 className="text-3xl font-semibold text-center py-5">Latest Products</h2>
                 <CarftItem></CarftItem>
+            </div>
+            <div>
+                <OurArtist></OurArtist>
+            </div>
+            <div>
+                <MoreExplore></MoreExplore>
             </div>
         </div>
     );
