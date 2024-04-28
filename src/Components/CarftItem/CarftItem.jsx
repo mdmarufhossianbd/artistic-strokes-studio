@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import CarftIemCard from '../CarftIemCard/CarftIemCard';
+import HomeProducts from '../HomeProducts/HomeProducts';
 
 const CarftItem = () => {
 
@@ -17,9 +17,9 @@ const CarftItem = () => {
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 max-w-7xl mx-auto">
             {
                 crafts?.slice(0, 6).map(item=> (
-                <CarftIemCard key={item._id}
+                <HomeProducts key={item._id}
                 item={item}
-                ></CarftIemCard>))
+                ></HomeProducts>))
             }
         </div>
     );
