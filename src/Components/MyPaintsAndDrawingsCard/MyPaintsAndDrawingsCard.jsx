@@ -1,9 +1,26 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
-const MyPaintsAndDrawingsCard = ({ item }) => {
+const MyPaintsAndDrawingsCard = ({ item, userCrafts ,setUserCrafts }) => {
 
     const { _id, photo, item_name, price, rating, processing_time, customization, stock } = item;
+
+    
+
+    const handleDelte = _id => {
+            fetch(`http://localhost:5000/paintings-and-drawings/${_id}`, {
+                method: "DELETE"
+            })
+            .then(res=>res.json())
+            .then(data=>{
+                console.log(data);
+                if(data){
+                    alert("Item Delete Successfully.")
+                    const remainingCrafts = userCrafts.filter( crafts=> crafts._id !== _id);
+                    setUserCrafts(remainingCrafts)                    
+                }
+            })
+    }
 
     return (
         <div className="bg-slate-400 rounded p-3 flex flex-col gap-2">
@@ -16,14 +33,16 @@ const MyPaintsAndDrawingsCard = ({ item }) => {
             <h2><span className='font-medium'>Price</span> : {price}</h2>
             <Link to={`/paintings-and-drawings/${_id}`}><button className='bg-pink-500 w-full rounded py-2 my-2 text-white font-medium'>View</button></Link>
             <Link><button className='bg-pink-500 w-full rounded py-2 my-2 text-white font-medium'>Update</button></Link>
-            <Link><button className='bg-pink-500 w-full rounded py-2 my-2'>Update</button></Link>
+            <Link><button onClick={() => handleDelte(_id)} className='bg-pink-500 w-full rounded py-2 my-2'>Delete</button></Link>
 
         </div>
     );
 };
 
 MyPaintsAndDrawingsCard.propTypes = {
-    item: PropTypes.obj
+    item: PropTypes.object,
+    userCrafts: PropTypes.object,
+    setUserCrafts: PropTypes.object
 }
 
 export default MyPaintsAndDrawingsCard;

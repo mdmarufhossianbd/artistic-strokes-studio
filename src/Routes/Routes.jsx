@@ -45,10 +45,10 @@ import PrivateRoutes from "./PrivateRoutes";
           </PrivateRoutes>
         },
         {
-          path: 'my-paintings-and-drawings',
-          element: <PrivateRoutes><MyPaintsAndDrawing></MyPaintsAndDrawing></PrivateRoutes>
+          path: '/my-paintings-and-drawings/',
+          element: <PrivateRoutes><MyPaintsAndDrawing></MyPaintsAndDrawing></PrivateRoutes>,
+          loader: ({params}) => fetch(`http://localhost:5000/user-added/${params.email}`)
         }
-
       ]
     },
   ]);
