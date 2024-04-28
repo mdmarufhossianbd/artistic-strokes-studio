@@ -1,27 +1,34 @@
+import { FaFacebook, FaLinkedin, FaTwitter } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Footer = () => {
     return (
         <div className="bg-base-200">
             <div className="grid lg:grid-cols-4 md:grid-cols-2 grid-cols-1 md:gap-5 gap-10 py-10 text-base-content max-w-7xl mx-auto px-10">
                 <nav className="flex flex-col">
-                    <h6 className="footer-title">Services</h6>
-                    <a className="link link-hover">Branding</a>
-                    <a className="link link-hover">Design</a>
-                    <a className="link link-hover">Marketing</a>
-                    <a className="link link-hover">Advertisement</a>
+                    <Link to={'/'}><h2 className="text-3xl font-medium pb-5">Artistic Strokes Studio</h2></Link>
+                    <p>Artistic Strokes Studio offers a unique blend of creativity and expertise, providing unparalleled arts and drawing services to bring your visions to life.</p>
                 </nav>
                 <nav className="flex flex-col">
-                    <h6 className="footer-title">Company</h6>
+                    <h6 className="footer-title">Important Links</h6>
                     <a className="link link-hover">About us</a>
                     <a className="link link-hover">Contact</a>
-                    <a className="link link-hover">Jobs</a>
-                    <a className="link link-hover">Press kit</a>
-                </nav>
-                <nav className="flex flex-col">
-                    <h6 className="footer-title">Legal</h6>
+                    <Link to={'/painting-and-drawing'}><button className="hover:underline">Arts & Crafts</button></Link>
                     <a className="link link-hover">Terms of use</a>
                     <a className="link link-hover">Privacy policy</a>
                     <a className="link link-hover">Cookie policy</a>
+                </nav>
+                <nav className="flex flex-col">
+                    <h6 className="footer-title">Contacts</h6>
+                    <p className="font-medium py-1">Office Address</p>
+                    <p>2799 Stone Lane <br />
+                        Plymouth Meeting, PA 19462</p>
+                    <p className="font-medium py-1">Social Link</p>
+                    <div className="text-xl flex gap-5">
+                        <FaFacebook />
+                        <FaTwitter />
+                        <FaLinkedin />
+                    </div>
                 </nav>
                 <form>
                     <h6 className="footer-title">Newsletter</h6>

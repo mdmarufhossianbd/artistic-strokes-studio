@@ -1,6 +1,9 @@
+import 'animate.css';
 import { useContext } from "react";
 import { useLoaderData } from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import Swal from "sweetalert2";
+
 import { AuthContext } from "../../Provider/AuthProvider";
 
 const UpdateCraft = () => {
@@ -38,7 +41,23 @@ const UpdateCraft = () => {
         .then(data=>{
             console.log(data);
             if(data.modifiedCount>0){
-                alert('Item Update Successfully')
+                Swal.fire({
+                    title: "Your item update successfully.",
+                    showClass: {
+                      popup: `
+                        animate__animated
+                        animate__fadeInUp
+                        animate__faster
+                      `
+                    },
+                    hideClass: {
+                      popup: `
+                        animate__animated
+                        animate__fadeOutDown
+                        animate__faster
+                      `
+                    }
+                  });
             }
         })
     }

@@ -1,19 +1,38 @@
 import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 const MyPaintsAndDrawingsCard = ({ item, userCrafts ,setUserCrafts }) => {
 
     const { _id, photo, item_name, price, rating, processing_time, customization, stock } = item;
 
     const handleDelte = _id => {
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+          })
+          .then((result) => {
+            if (result.isConfirmed) {
             fetch(`http://localhost:5000/paintings-and-drawings/${_id}`, {
                 method: "DELETE"
             })
             .then(res=>res.json())
             .then(data=>{
                 console.log(data);
-                if(data){
-                    alert("Item Delete Successfully.")
+                if(data.deletedCount > 0){
+                          Swal.fire({
+                            title: "Deleted!",
+                            text: "Your item has been deleted.",
+                            icon: "success"
+                          });
+                        }
+                      });
+
                     const remainingCrafts = userCrafts.filter( crafts=> crafts._id !== _id);
                     setUserCrafts(remainingCrafts)                    
                 }
