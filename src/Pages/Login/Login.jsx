@@ -101,13 +101,7 @@ const Login = () => {
                     <Link><button onClick={handleGitHubLogin} className="bg-[#4E4FEB] rounded-full py-2 my-2 text-white font-medium text-xl w-full hover:bg-[#10a58f]">Continue with GitHub</button></Link>
                     <p className="text-center mt-3">Don't have an account? <Link className="font-bold" to={'/register'}>Register</Link></p>
                 </div>
-            </div>
-            <div className="pl-5">
-
-                {/* <div className="w-1/3">
-                    <img className="rounded w-full mt-16" src="/src/assets/images/login and register.png" alt="" />
-                </div> */}
-            </div>
+            </div>            
         </div>
     );
 };

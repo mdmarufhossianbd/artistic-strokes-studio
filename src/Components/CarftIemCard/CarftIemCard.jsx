@@ -12,7 +12,7 @@ const CarftIemCard = ({ item }) => {
                 <p>Price : ${price}</p>
                 <p>Rating {rating} Out of 5</p>
             </div>
-            <Link to={`/paintings-and-drawings/${_id}`}><button className='bg-purple-500 py-2 my-2 w-full rounded text-white text-xl font-medium'>View Details</button></Link>
+            <Link to={`/paintings-and-drawings/${_id}`}><button className='bg-gradient-to-r from-[#e39396] via-purple-500 to-pink-500 py-2 my-2 w-full rounded text-white text-xl font-medium border border-white hover:border hover:border-[#10A58F]'>View Details</button></Link>
         </div>
     );
 };

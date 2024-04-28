@@ -46,7 +46,7 @@ const AddPaintingandDrawing = () => {
     return (
         <div>
             <h2 className="text-center font-semibold lg:text-5xl text-3xl py-10">Add Painting and Drawing</h2>
-            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-5 p-5 border-2 mb-10 rounded-md max-w-4xl mx-auto">
+            <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-5 p-5 border-2 mb-10 rounded-md max-w-4xl md:mx-auto mx-2">
                 <div>
                     <label className="text-lg font-medium">Photo</label>
                     <input className="bg-[#10a58f] mt-2 rounded w-full py-3 px-3 text-white placeholder:text-white placeholder:pl-3 focus:outline-none focus:ring-0" type="text" name="photo" placeholder="Enter photo url" id="" />

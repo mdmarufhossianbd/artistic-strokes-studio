@@ -21,8 +21,6 @@ const Register = () => {
         const email = form.email.value;
         const photo = form.photo.value;
         const password = form.password.value;
-        // const user = {name, email, password};
-        // console.log(user);
 
         // password Validation
 
@@ -57,15 +55,15 @@ const Register = () => {
                 result.user
 
                 updateUserProfile(name, photo, email)
-                .then(()=>{
-                    if (result.user) {
-                        const toastMessage = () => toast.success("Your account Create Successfully");
-                        toastMessage();
-                        navigate(location?.state ? location.state : "/")
-                        setReload(true);
-                    }
-                })
-                
+                    .then(() => {
+                        if (result.user) {
+                            const toastMessage = () => toast.success("Your account Create Successfully");
+                            toastMessage();
+                            navigate(location?.state ? location.state : "/")
+                            setReload(true);
+                        }
+                    })
+
             })
             .catch(error => {
                 error.message
@@ -76,12 +74,13 @@ const Register = () => {
                 }
             })
     }
+    
     return (
-        <div className="lg:px-[300px] flex items-center gap-5 pt-10 pb-20 bg-[#e7f4f2]">
-            <div className="w-1/2">
-                <h2 className="text-3xl font-bold py-5 text-center">Create an account</h2>
-                <p className="font-medium mb-5 text-center">Let's get started!</p>
-                <form onSubmit={handleRegister} className="flex flex-col w-[90%] pl-4">
+        <div className="lg:px-[300px] pt-10 pb-20 bg-[#e7f4f2]">
+            <h2 className="text-3xl font-bold py-5 text-center">Create an account</h2>
+            <p className="font-medium mb-5 text-center">Let's get started!</p>
+            <div className="p-5">
+                <form onSubmit={handleRegister} className="flex flex-col w-full lg:w-1/2 px-4 mx-auto">
                     <label className="text-lg font-medium py-2">Name</label>
                     <input className="bg-[#10a58f] rounded text-xl py-2 pl-4 text-white focus:outline-none focus:ring-0 placeholder:text-white" type="text" name="name" placeholder="Enter your full name" required />
                     <label className="text-lg font-medium py-2">Email</label>
@@ -99,10 +98,6 @@ const Register = () => {
                     <p className="text-center">Already have an account? <Link className="font-bold" to={'/login'}>Login</Link></p>
                     <ToastContainer />
                 </form>
-
-            </div>
-            <div className="w-1/2">
-                <img className="rounded w-full " src="/src/assets/images/login and register.png" alt="" />
             </div>
         </div>
     );

@@ -18,11 +18,12 @@ const MyPaintsAndDrawing = () => {
             })
     }, [user])
 
-    
-
     return (
         <div className="max-w-7xl mx-auto my-10">
-            <h2>Your Total Data : {userCrafts.length}</h2>
+            <div className="text-center">
+                <h2 className="text-3xl font-semibold py-5 text-[#2a2824]">Your Listed Products</h2>
+                <h2 className="pb-10">Your Total Products : {userCrafts.length}</h2>
+            </div>
             <div className="grid lg:grid-cols-4 md:grid-cols-3 grid-cols-1 gap-5 md:mx-5 mx-3">
                 {
                     userCrafts.map(item => (
@@ -32,7 +33,7 @@ const MyPaintsAndDrawing = () => {
                         ></MyPaintsAndDrawingsCard>))
                 }
             </div>
-           
+
         </div>
     );
 };
