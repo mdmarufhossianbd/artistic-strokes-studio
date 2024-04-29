@@ -28,9 +28,12 @@ const Navber = () => {
     }
 
     const links = <>
-        <NavLink to={'/'}>Home</NavLink>
-        <NavLink to={'/painting-and-drawing'}>All Art & Craft List</NavLink>
-        <NavLink to={'/add-painting-and-drawing'}>Add Art & Craft List</NavLink>
+        <NavLink className='py-2' to={'/'}>Home</NavLink>
+        <NavLink className='py-2' to={'/painting-and-drawing'}>All Art & Craft</NavLink>
+        <NavLink className='py-2' to={'/add-painting-and-drawing'}>Add Art & Craft</NavLink>
+        {
+            user ? <NavLink className='py-2' to={'/my-paintings-and-drawings'}>My Art & Craft</NavLink> : ''
+        }
     </>
 
     return (
@@ -52,7 +55,7 @@ const Navber = () => {
                         <li><Link className="hover:bg-[#5245ED] hover:text-white rounded py-2 px-3" to={'/painting-and-drawing'}>All Art & Craft</Link></li>
                         <li><Link className="hover:bg-[#5245ED] hover:text-white rounded py-2 px-3" to={'/add-painting-and-drawing'}>Add Art & Craft</Link></li>
                         {
-                            user ? <li><Link className="hover:bg-[#5245ED] hover:text-white rounded py-2 px-3" to={'/my-paintings-and-drawings'}>My Art & Craft List</Link>
+                            user ? <li><Link className="hover:bg-[#5245ED] hover:text-white rounded py-2 px-3" to={'/my-paintings-and-drawings'}>My Art & Craft</Link>
                             </li> : ""
                         }
                     </div>

@@ -2,7 +2,6 @@ import { useEffect, useState } from 'react';
 import HomeProducts from '../HomeProducts/HomeProducts';
 
 const CarftItem = () => {
-
     const [crafts, setCraft] = useState([])
 
     useEffect(()=>{
