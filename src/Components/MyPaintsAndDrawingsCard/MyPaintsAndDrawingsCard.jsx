@@ -32,7 +32,6 @@ const MyPaintsAndDrawingsCard = ({ item, userCrafts ,setUserCrafts }) => {
                           });
                         }
                       });
-
                     const remainingCrafts = userCrafts.filter( crafts=> crafts._id !== _id);
                     setUserCrafts(remainingCrafts)                    
                 }
@@ -41,7 +40,7 @@ const MyPaintsAndDrawingsCard = ({ item, userCrafts ,setUserCrafts }) => {
 
     return (
         <div className="bg-[#e7f4f2] rounded p-3 flex flex-col gap-2">
-            <img className='rounded-t' src={photo} alt="" />
+            <img className='rounded-t w-full h-[250px] object-cover' src={photo} alt="" />
             <h2 className='text-xl font-semibold'>{item_name}</h2>
             <p><span className='font-medium'>Rating</span> : {rating} out of 5.00</p>
             <p><span className='font-medium'>Processing Time</span> : {processing_time}</p>

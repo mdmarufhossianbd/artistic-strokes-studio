@@ -9,10 +9,6 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 const Slider = () => {
 
-
-
-
-
     return (
         <div className='max-w-7xl mx-auto py-10'>
             <Swiper
@@ -30,9 +26,9 @@ const Slider = () => {
                 <SwiperSlide>
                     <img className='rounded' src="/src/assets/images/painting.png
                     " alt="" />
-                    <div className='absolute left-[20%] bottom-[40%] border-3 flex flex-col gap-5'>
+                    <div className='absolute left-[20%] md:bottom-[40%] bottom-[20%] border-3 flex flex-col gap-5'>
                         <span className='font-semibold text-3xl'> Welcome to Artistic Strokes Studio <br />
-                            <span className='text-5xl'>
+                            <span className='md:text-5xl text-3xl'>
                                 <Typewriter
                                     cursor      
                                     cursorBlinking
@@ -48,16 +44,16 @@ const Slider = () => {
                                 />
                             </span>
                         </span>
-                        <Link to={'/'}>
+                        <Link to={'/painting-and-drawing'}>
                             <button className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-2 px-10 rounded text-white font-semibold hover:bg-pink-500'>Explore</button></Link>
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
                     <img className='rounded' src="/src/assets/images/painting 3.png
                     " alt="" />
-                    <div className='absolute left-[20%] bottom-[40%] border-3 flex flex-col gap-5'>
+                    <div className='absolute left-[20%] md:bottom-[40%] bottom-[20%] border-3 flex flex-col gap-5'>
                         <span className='font-semibold text-3xl'> Welcome to Artistic Strokes Studio <br />
-                            <span className='text-5xl'>
+                            <span className='md:text-5xl text-3xl'>
                                 <Typewriter
                                     cursor      
                                     cursorBlinking
@@ -73,16 +69,16 @@ const Slider = () => {
                                 />
                             </span>
                         </span>
-                        <Link to={'/'}>
+                        <Link to={'/painting-and-drawing'}>
                             <button className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-2 px-10 rounded text-white font-semibold hover:bg-pink-500'>Explore</button></Link>
                     </div>
                 </SwiperSlide>
                     <SwiperSlide>
                         <img className='rounded' src="/src/assets/images/painting 4.png
                         " alt="" />
-                        <div className='absolute left-[20%] bottom-[40%] border-3 flex flex-col gap-5'>
+                        <div className='absolute left-[20%] md:bottom-[40%] bottom-[20%] border-3 flex flex-col gap-5'>
                             <span className='font-semibold text-3xl'> Welcome to Artistic Strokes Studio <br />
-                                <span className='text-5xl'>
+                                <span className='md:text-5xl text-3xl'>
                                     <Typewriter
                                         cursor      
                                         cursorBlinking
@@ -98,7 +94,7 @@ const Slider = () => {
                                     />
                                 </span>
                             </span>
-                            <Link to={'/'}>
+                            <Link to={'/painting-and-drawing'}>
                                 <button className='bg-gradient-to-r from-indigo-500 via-purple-500 to-pink-500 py-2 px-10 rounded text-white font-semibold hover:bg-pink-500'>Explore</button></Link>
                         </div>
                     </SwiperSlide>

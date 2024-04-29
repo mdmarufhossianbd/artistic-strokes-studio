@@ -15,6 +15,7 @@ const Category = () => {
 
     return (
         <div className="grid lg:grid-cols-3 md:grid-cols-2 grid-cols-1 gap-5 max-w-7xl mx-auto">
+            
             {
                 items?.map(item=> (
                     <CategoryCard key={item._id}
@@ -23,7 +24,6 @@ const Category = () => {
                 ))
             }
             <div>
-                {/* <Link to={`/category/${category}`}><h2>Portrait Drawing</h2></Link> */}
             </div>
         </div>
     );
