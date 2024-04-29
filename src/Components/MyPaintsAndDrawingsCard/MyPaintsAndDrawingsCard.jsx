@@ -18,7 +18,7 @@ const MyPaintsAndDrawingsCard = ({ item, userCrafts ,setUserCrafts }) => {
           })
           .then((result) => {
             if (result.isConfirmed) {
-            fetch(`http://localhost:5000/paintings-and-drawings/${_id}`, {
+            fetch(`https://painting-and-drawing-server-beryl.vercel.app/paintings-and-drawings/${_id}`, {
                 method: "DELETE"
             })
             .then(res=>res.json())

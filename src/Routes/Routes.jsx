@@ -3,6 +3,7 @@ import {
 } from "react-router-dom";
 import Root from "../Layouts/Root";
 import AddPaintingandDrawing from "../Pages/AddPaintingandDrawing/AddPaintingandDrawing";
+import Category from "../Pages/Category/Category";
 import ErrorPage from "../Pages/ErrorPage/ErrorPage";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
@@ -34,12 +35,12 @@ import PrivateRoutes from "./PrivateRoutes";
         {
           path: '/painting-and-drawing',
           element: <PaintingAndDrawing></PaintingAndDrawing>,
-          loader: () => fetch('http://localhost:5000/paintings-and-drawings')
+          loader: () => fetch('https://painting-and-drawing-server-beryl.vercel.app/paintings-and-drawings')
         },
         {
           path: '/paintings-and-drawings/:id',
           element: <PrivateRoutes><PaintingAndDrawingDetails></PaintingAndDrawingDetails></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/paintings-and-drawings/${params.id}`)
+          loader: ({params}) => fetch(`https://painting-and-drawing-server-beryl.vercel.app/paintings-and-drawings/${params.id}`)
         },
         {
           path: 'add-painting-and-drawing',
@@ -49,12 +50,17 @@ import PrivateRoutes from "./PrivateRoutes";
         {
           path: '/my-paintings-and-drawings/',
           element: <PrivateRoutes><MyPaintsAndDrawing></MyPaintsAndDrawing></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/user-added/${params.email}`)
+          loader: ({params}) => fetch(`https://painting-and-drawing-server-beryl.vercel.app/user-added/${params.email}`)
         },
         {
           path: '/update-craft/:id',
           element: <PrivateRoutes><UpdateCraft></UpdateCraft></PrivateRoutes>,
-          loader: ({params}) => fetch(`http://localhost:5000/paintings-and-drawings/${params.id}`)
+          loader: ({params}) => fetch(`https://painting-and-drawing-server-beryl.vercel.app/paintings-and-drawings/${params.id}`)
+        },
+        {
+          path: '/category/:category',
+          element: <Category></Category>,
+          loader: ({params}) => fetch(`https://painting-and-drawing-server-beryl.vercel.app/category/${params.category}`)
         }
       ]
     },

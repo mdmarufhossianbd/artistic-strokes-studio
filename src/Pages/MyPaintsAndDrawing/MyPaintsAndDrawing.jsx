@@ -25,7 +25,7 @@ const MyPaintsAndDrawing = () => {
     }
 
     useEffect(() => {
-        fetch(`http://localhost:5000/user-added/${user?.email}`)
+        fetch(`https://painting-and-drawing-server-beryl.vercel.app/user-added/${user?.email}`)
             .then(res => res.json())
             .then(data => {
                 setUserCrafts(data);

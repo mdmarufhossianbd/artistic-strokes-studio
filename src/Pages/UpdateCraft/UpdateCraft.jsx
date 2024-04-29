@@ -30,7 +30,7 @@ const UpdateCraft = () => {
         console.log(carftData);
 
         // update data to the server
-        fetch(`http://localhost:5000/paintings-and-drawings/${_id}`, {
+        fetch(`https://painting-and-drawing-server-beryl.vercel.app/paintings-and-drawings/${_id}`, {
             method: "PUT",
             headers:{
                 'content-type' : 'application/json'

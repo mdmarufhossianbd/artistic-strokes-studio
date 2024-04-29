@@ -25,7 +25,7 @@ const AddPaintingandDrawing = () => {
         const carftData = { photo, item_name, category, price, short_description, rating, processing_time, customization, stock, user_name, email}
         
 
-        fetch('http://localhost:5000/paintings-and-drawings', {
+        fetch('https://painting-and-drawing-server-beryl.vercel.app/paintings-and-drawings', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

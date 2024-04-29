@@ -10,12 +10,12 @@ const Home = () => {
             <div className="bg-[#f7f8fc]">
             <Slider></Slider>            
             </div>
-            <div className="px-4 my-10">
-                <Category></Category>
-            </div>
             <div className="my-10 px-4">
                 <h2 className="text-3xl font-semibold text-center py-5">Latest Products</h2>
                 <CarftItem></CarftItem>
+            </div>
+            <div className="px-4 my-10">
+                <Category></Category>
             </div>
             <div>
                 <OurArtist></OurArtist>

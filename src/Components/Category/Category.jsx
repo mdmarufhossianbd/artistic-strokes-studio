@@ -6,7 +6,7 @@ const Category = () => {
     const [items, setItems] = useState([]);
 
     useEffect(()=>{
-        fetch('http://localhost:5000/category')
+        fetch('https://painting-and-drawing-server-beryl.vercel.app/category')
         .then(res=>res.json())
         .then(data=>{
             setItems(data)
@@ -22,6 +22,9 @@ const Category = () => {
                     ></CategoryCard>
                 ))
             }
+            <div>
+                {/* <Link to={`/category/${category}`}><h2>Portrait Drawing</h2></Link> */}
+            </div>
         </div>
     );
 };

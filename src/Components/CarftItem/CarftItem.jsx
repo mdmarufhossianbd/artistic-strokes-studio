@@ -5,7 +5,7 @@ const CarftItem = () => {
     const [crafts, setCraft] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/paintings-and-drawings')
+        fetch('https://painting-and-drawing-server-beryl.vercel.app/paintings-and-drawings')
         .then(res=>res.json())
         .then(data=>{
             setCraft(data)
