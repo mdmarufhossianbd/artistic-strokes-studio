@@ -6,6 +6,9 @@ import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import { Autoplay, Navigation, } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
+import photo3 from "../../assets/images/painting 3.png";
+import photo2 from "../../assets/images/painting 4.png";
+import photo1 from "../../assets/images/painting.png";
 
 const Slider = () => {
 
@@ -24,8 +27,7 @@ const Slider = () => {
                 className="mySwiper" new
             >
                 <SwiperSlide>
-                    <img className='rounded' src="/src/assets/images/painting.png
-                    " alt="" />
+                    <img className='rounded' src={photo1} alt="" />
                     <div className='absolute left-[20%] md:bottom-[40%] bottom-[20%] border-3 flex flex-col gap-5'>
                         <span className='font-semibold text-3xl'> Welcome to Artistic Strokes Studio <br />
                             <span className='md:text-5xl text-3xl'>
@@ -36,7 +38,7 @@ const Slider = () => {
                                     delaySpeed={1000}
                                     deleteSpeed={25}
                                     loop={0}
-                                    typeSpeed={75}
+                                    typeSpeed={50}
                                     words={[
                                         ' Where Art Comes Alive!',           
                                         ' From Canvas to Reality',           
@@ -49,8 +51,7 @@ const Slider = () => {
                     </div>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img className='rounded' src="/src/assets/images/painting 3.png
-                    " alt="" />
+                    <img className='rounded' src={photo2} alt="" />
                     <div className='absolute left-[20%] md:bottom-[40%] bottom-[20%] border-3 flex flex-col gap-5'>
                         <span className='font-semibold text-3xl'> Welcome to Artistic Strokes Studio <br />
                             <span className='md:text-5xl text-3xl'>
@@ -63,8 +64,8 @@ const Slider = () => {
                                     loop={0}
                                     typeSpeed={75}
                                     words={[
-                                        ' Where Art Comes Alive!',           
-                                        ' From Canvas to Reality',           
+                                        ' Drawing Dreams into Reality',           
+                                        ' Art Speaks Louder than Words.',           
                                     ]}
                                 />
                             </span>
@@ -74,8 +75,7 @@ const Slider = () => {
                     </div>
                 </SwiperSlide>
                     <SwiperSlide>
-                        <img className='rounded' src="/src/assets/images/painting 4.png
-                        " alt="" />
+                        <img className='rounded' src={photo3} alt="" />
                         <div className='absolute left-[20%] md:bottom-[40%] bottom-[20%] border-3 flex flex-col gap-5'>
                             <span className='font-semibold text-3xl'> Welcome to Artistic Strokes Studio <br />
                                 <span className='md:text-5xl text-3xl'>
@@ -88,8 +88,8 @@ const Slider = () => {
                                         loop={0}
                                         typeSpeed={75}
                                         words={[
-                                            ' Where Art Comes Alive!',           
-                                            ' From Canvas to Reality',           
+                                            ' Every Stroke Tells a Story.',           
+                                            ' Where Imagination Takes Flight.',           
                                         ]}
                                     />
                                 </span>

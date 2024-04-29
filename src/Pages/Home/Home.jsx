@@ -13,10 +13,8 @@ const Home = () => {
             </div>
             <div className="my-10 px-4">
                 <h2 className="text-3xl font-semibold text-center py-5">Latest Products</h2>
-                <p className="text-center mb-10">Check out our latest selection of captivating artwork and drawing supplies, curated to inspire creativity and elevate your artistic journey!</p>
-                
-                <CarftItem></CarftItem>
-                
+                <p className="text-center mb-10">Check out our latest selection of captivating artwork and drawing supplies, curated to inspire creativity and elevate your artistic journey!</p>                
+                <CarftItem></CarftItem>                
             </div>
             <div className="px-4 my-10">
                 <h2 className="text-center font-medium text-3xl my-10">Choose your category</h2>

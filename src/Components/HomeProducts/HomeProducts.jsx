@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 const HomeProducts = ({ item }) => {
 
     const { _id, photo, item_name, category, price, rating } = item;
-    
 
     return (
         <div>
